@@ -1,24 +1,28 @@
 package com.example.ProjectApp.ProjectApp.Driver;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="products")
 public class ProductModel {
+	       @Id
           private String ProductId;
-          private String ImageUrl;
+          @Column(name="ImageUrl")
+	      private String ImageUrl;
+          @Column(name="ProductName")
           private String ProductName;
+          @Column(name="price")
           private String price;
+          @Column(name="decription")
           private String description;
+          @Column(name="quantity")
           private String quantity;
           public ProductModel() {
         	  
           }
-          public ProductModel(String productId, String imageUrl, String productName, String price, String description,
-  				String quantity) {
-  			ProductId = productId;
-  			ImageUrl = imageUrl;
-  			ProductName = productName;
-  			this.price = price;
-  			this.description = description;
-  			this.quantity = quantity;
-  		}
 		public String getProductId() {
 			return ProductId;
 		}
